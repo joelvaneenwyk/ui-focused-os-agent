@@ -43,5 +43,6 @@ tasks_status.json
 /windows_ui_agent*/
 
 .venv/
+dist/
 
-.python-version
+/.python-version
