@@ -28,7 +28,10 @@ dependencies = [
 ]
 
 [project.scripts]
-main = "windows_ui_agent.__main__:main"
+ufo = "ufo.__main__:main"
+learner = "ufo.__main__:main"
+record-processor = "record_processor.__main__:main"
+dataflow = "dataflow.__main__:main"
 
 [build-system]
 requires = ["setuptools", "wheel"]
