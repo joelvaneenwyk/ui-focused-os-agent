@@ -46,7 +46,7 @@ Both agents leverage the multi-modal capabilities of GPT-4V(o) to comprehend the
 - 📅 2024-09-08: We have a **New Release for v1.1.0!**, to allows UFO to click on any region of the application and reduces its latency by up tp 1/3!
 - 📅 2024-07-06: We have a **New Release for v1.0.0!**.  You can check out our [documentation](https://microsoft.github.io/UFO/). We welcome your contributions and feedback!
 - 📅 2024-06-28: We are thrilled to announce that our official introduction video is now available on [YouTube](https://www.youtube.com/watch?v=QT_OhygMVXU)!
-<!-- - 📅 2024-06-25: **New Release for v0.2.1!**  We are excited to announce the release of version 0.2.1! This update includes several new features and improvements:
+- 📅 2024-06-25: **New Release for v0.2.1!**  We are excited to announce the release of version 0.2.1! This update includes several new features and improvements:
     1. **HostAgent Refactor:** We've refactored the HostAgent to enhance its efficiency in managing AppAgents within UFO.
     2. **Evaluation Agent:** Introducing an evaluation agent that assesses task completion and provides real-time feedback.
     3. **Google Gemini && Claude Support:** UFO now supports Google Gemini and Cluade as the inference engine. Refer to our detailed guide in [Gemini documentation](https://microsoft.github.io/UFO/supported_models/gemini/) or [Claude documentation](https://microsoft.github.io/UFO/supported_models/claude/).
@@ -61,8 +61,7 @@ Both agents leverage the multi-modal capabilities of GPT-4V(o) to comprehend the
     1. We now support creating your help documents for each Windows application to become an app expert. Check the [documentation](https://microsoft.github.io/UFO/creating_app_agent/help_document_provision/) for more details!
     2. UFO now supports RAG from offline documents and online Bing search.
     3. You can save the task completion trajectory into its memory for UFO's reference, improving its future success rate!
-    4. You can customize different GPT models for HostAgent and AppAgent. Text-only models (e.g., GPT-4) are now supported! -->
-- 📅 ...
+    4. You can customize different GPT models for HostAgent and AppAgent. Text-only models (e.g., GPT-4) are now supported!
 - 📅 2024-02-14: Our [technical report](https://arxiv.org/abs/2402.07939) is online!
 - 📅 2024-02-10: UFO is released on GitHub🎈. Happy Chinese New year🐉!
 
