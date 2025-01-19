@@ -40,7 +40,7 @@ scripts/*
 tasks_status.json
 
 /.git/
-/windows_ui_agent*/
+/*.egg-info/
 
 .venv/
 dist/
