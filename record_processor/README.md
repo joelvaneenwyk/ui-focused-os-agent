@@ -7,7 +7,10 @@ UFO can learn from user-provided demonstrations for specific requests and use th
 
 Here's a demo of using user demonstrations to enhance UFO's understanding of user requests. UFO currently could assist users with a wide range of tasks. However, like any AI system, UFO may encounter challenges in accurately interpreting complex user requests.To address this, we demonstrate how UFO leverages user demonstrations to improve its performance over time. By observing and analyzing user interactions, UFO adapts and refines its understanding of user requests, leading to more accurate and efficient assistance.
 
-<https://github.com/yunhao0204/UFO/assets/59384816/0146f83e-1b5e-4933-8985-fe3f24ec4777>
+<video controls>
+    <source src="../assets/enhancing_ufo_with_rag.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 ## How to Enable and Config this Function ❓
 
