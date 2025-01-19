@@ -19,7 +19,6 @@ __pycache__/
 ufo/config/config.yaml
 ufo/config/config_llm.yaml
 
-
 # Ignore the helper files
 ufo/rag/app_docs/*
 learner/records.json
@@ -39,3 +38,10 @@ scripts/*
 
 # Ignore the record files
 tasks_status.json
+
+/.git/
+/windows_ui_agent*/
+
+.venv/
+
+.python-version
