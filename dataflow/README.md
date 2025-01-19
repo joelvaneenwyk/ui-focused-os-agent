@@ -1,7 +1,10 @@
+# UFO // Dataflow
+
+<!-- markdownlint-disable MD033 -->
+
 <h1 align="center">
     Large Action Models: From Inception to Implementation
 </h1>
-
 
 <div align="center">
 
@@ -15,8 +18,7 @@
 
 </div>
 
-
-# Introduction
+## Introduction
 
 This repository contains the implementation of the **Data Collection** process for training the **Large Action Models** (LAMs) in the [**paper**](https://arxiv.org/abs/2412.10047). The **Data Collection** process is designed to streamline task processing, ensuring that all necessary steps are seamlessly integrated from initialization to execution. This module is part of the [**UFO**](https://arxiv.org/abs/2402.07939) project.
 
@@ -24,17 +26,15 @@ If you find this project useful, please give a star ⭐, and consider to cite ou
 
 ```bibtex
 @misc{wang2024largeactionmodelsinception,
-      title={Large Action Models: From Inception to Implementation}, 
+      title={Large Action Models: From Inception to Implementation},
       author={Lu Wang and Fangkai Yang and Chaoyun Zhang and Junting Lu and Jiaxu Qian and Shilin He and Pu Zhao and Bo Qiao and Ray Huang and Si Qin and Qisheng Su and Jiayi Ye and Yudi Zhang and Jian-Guang Lou and Qingwei Lin and Saravan Rajmohan and Dongmei Zhang and Qi Zhang},
       year={2024},
       eprint={2412.10047},
       archivePrefix={arXiv},
       primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2412.10047}, 
+      url={https://arxiv.org/abs/2412.10047},
 }
 ```
-
-
 
 # Dataflow
 
@@ -49,7 +49,7 @@ You can use `instantiation` and `execution` independently if you only need to pe
 The overall processing of dataflow is as below. Given a task-plan data, the LLMwill instantiatie the task-action data, including choosing template, prefill, filter.
 
 <h1 align="center">
-    <img src="../assets/dataflow/overview.png"/> 
+    <img src="../assets/dataflow/overview.png"/>
 </h1>
 
 ## How To Use
@@ -70,7 +70,7 @@ Before running dataflow, you need to provide your LLM configurations **individua
 
 ```bash
 VISUAL_MODE: True, # Whether to use the visual mode
-API_TYPE: "openai" , # The API type, "openai" for the OpenAI API.  
+API_TYPE: "openai" , # The API type, "openai" for the OpenAI API.
 API_BASE: "https://api.openai.com/v1/chat/completions", # The the OpenAI API endpoint.
 API_KEY: "sk-",  # The OpenAI API key, begin with sk-
 API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
@@ -81,7 +81,7 @@ API_MODEL: "gpt-4-vision-preview",  # The only OpenAI model
 
 ```bash
 VISUAL_MODE: True, # Whether to use the visual mode
-API_TYPE: "aoai" , # The API type, "aoai" for the Azure OpenAI.  
+API_TYPE: "aoai" , # The API type, "aoai" for the Azure OpenAI.
 API_BASE: "YOUR_ENDPOINT", #  The AOAI API address. Format: https://{your-resource-name}.openai.azure.com
 API_KEY: "YOUR_KEY",  # The aoai API key
 API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
@@ -114,13 +114,13 @@ Certain files need to be prepared before running the task.
 
 #### 3.1. Tasks as JSON
 
-The tasks that need to be instantiated should be organized in a folder of JSON files, with the default folder path set to dataflow `/tasks `. This path can be changed in the `dataflow/config/config.yaml` file, or you can specify it in the terminal, as mentioned in **4. Start Running**. For example, a task stored in `dataflow/tasks/prefill/` may look like this:
+The tasks that need to be instantiated should be organized in a folder of JSON files, with the default folder path set to dataflow `/tasks`. This path can be changed in the `dataflow/config/config.yaml` file, or you can specify it in the terminal, as mentioned in **4. Start Running**. For example, a task stored in `dataflow/tasks/prefill/` may look like this:
 
 ```json
 {
     // The app you want to use
     "app": "word",
-    // A unique ID to distinguish different tasks 
+    // A unique ID to distinguish different tasks
     "unique_id": "1",
     // The task and steps to be instantiated
     "task": "Type 'hello' and set the font type to Arial",
@@ -195,11 +195,12 @@ The default task hub is set to be `"TASKS_HUB"` in `dataflow/config_dev.yaml`.
   python -m dataflow -dataflow --task_path path_to_task_file
   ```
 
-* Instantiation Task:
+- Instantiation Task:
 
   ```bash
   python -m dataflow -instantiation --task_path path_to_task_file
   ```
+
 * Execution Task:
 
   ```bash
@@ -219,11 +220,11 @@ There are three key steps in the instantiation process:
 Given the initial task, the dataflow first choose a template (`Phase 1`), the prefill the initial task based on word envrionment to obtain task-action data (`Phase 2`). Finnally, it will filter the established task to evaluate the quality of task-action data.
 
 <h1 align="center">
-    <img src="../assets/dataflow/instantiation.png"/> 
+    <img src="../assets/dataflow/instantiation.png"/>
 </h1>
 #### 1. Choose Template File
 
-Templates for your app must be defined and described in `dataflow/templates/app`. For instance, if you want to instantiate tasks for the Word application, place the relevant `.docx` files in dataflow `/templates/word `, along with a `description.json` file.
+Templates for your app must be defined and described in `dataflow/templates/app`. For instance, if you want to instantiate tasks for the Word application, place the relevant `.docx` files in dataflow `/templates/word`, along with a `description.json` file.
 
 The appropriate template will be selected based on how well its description matches the instruction.
 
@@ -244,9 +245,8 @@ The instantiated plans will be executed by a execute task. After execution, eval
 In this phase, given the task-action data, the execution process will match the real controller based on word environment and execute the plan step by step.
 
 <h1 align="center">
-    <img src="../assets/dataflow/execution.png"/> 
+    <img src="../assets/dataflow/execution.png"/>
 </h1>
-
 
 ## Result
 
@@ -391,13 +391,13 @@ After the two tasks are finished, the task and output files would appear as foll
 UFO/
 ├── dataflow/
 │   └── results/
-│       ├── saved_document/       	# Directory for saved documents
-│       │   ├── bulleted.docx     	# Result of the "bulleted" task
-│       │   └── rotate.docx       	# Result of the "rotate" task
-│       ├── dataflow/            		 # Dataflow results directory
-│       │   ├── execution_pass/   	# Successfully executed tasks
-│       │   │   ├── bulleted.json 	# Execution result for the "bulleted" task
-│       │   │   ├── rotate.json  	 # Execution result for the "rotate" task
+│       ├── saved_document/        # Directory for saved documents
+│       │   ├── bulleted.docx      # Result of the "bulleted" task
+│       │   └── rotate.docx        # Result of the "rotate" task
+│       ├── dataflow/               # Dataflow results directory
+│       │   ├── execution_pass/    # Successfully executed tasks
+│       │   │   ├── bulleted.json  # Execution result for the "bulleted" task
+│       │   │   ├── rotate.json    # Execution result for the "rotate" task
 │       │   │   └── ...
 └── ...
 ```
@@ -406,22 +406,22 @@ UFO/
 
 The result stucture of bulleted task is shown as below. This document provides a detailed breakdown of the task execution process for turning lines of text into a bulleted list in Word. It includes the original task description, execution results, and time analysis for each step.
 
-* **`unique_id`** : The identifier for the task, in this case, `"5"`.
-* **`app`** : The application being used, which is `"word"`.
-* **`original`** : Contains the original task description and the steps.
+- **`unique_id`** : The identifier for the task, in this case, `"5"`.
+- **`app`** : The application being used, which is `"word"`.
+- **`original`** : Contains the original task description and the steps.
 
-  * **`original_task`** : Describes the task in simple terms (turning text into a bulleted list).
-  * **`original_steps`** : Lists the steps required to perform the task.
-* **`execution_result`** : Provides the result of executing the task.
+  - **`original_task`** : Describes the task in simple terms (turning text into a bulleted list).
+  - **`original_steps`** : Lists the steps required to perform the task.
+- **`execution_result`** : Provides the result of executing the task.
 
-  * **`result`** : Describes the outcome of the execution, including a success message and sub-scores for each part of the task. The `complete: "yes"` means the evaluation agent think the execution process is successful! The `sub_score` is the evaluation of each subtask, corresponding to the ` instantiated_plan` in the  `prefill`.
-  * **`error`** : If any error occurred during execution, it would be reported here, but it's `null` in this case.
-* **`instantiation_result`** : Details the instantiation of the task (setting up the task for execution).
+  - **`result`** : Describes the outcome of the execution, including a success message and sub-scores for each part of the task. The `complete: "yes"` means the evaluation agent think the execution process is successful! The `sub_score` is the evaluation of each subtask, corresponding to the `instantiated_plan` in the  `prefill`.
+  - **`error`** : If any error occurred during execution, it would be reported here, but it's `null` in this case.
+- **`instantiation_result`** : Details the instantiation of the task (setting up the task for execution).
 
-  * **`choose_template`** : Path to the template or document created during the task (in this case, the bulleted list document).
-  * **`prefill`** : Describes the `instantiated_request` and  `instantiated_plan` and the steps involved, such as selecting text and clicking buttons, which is the result of prefill flow. The `Success` and `MatchedControlText` is added in the execution process. **`Success`** indicates whether the subtask was executed successfully. **`MatchedControlText`** refers to the control text that was matched during the execution process based on the plan.
-  * **`instantiation_evaluation`** : Provides feedback on the task's feasibility and the evaluation of the request, which is result of the filter flow. **`"judge": true`** : This indicates that the evaluation of the task was positive, meaning the task is considered valid or successfully judged. And the `thought ` is the detailed reason.
-* **`time_cost`** : The time spent on different parts of the task, including template selection, prefill, instantiation evaluation, and execution. Total time is also given.
+  - **`choose_template`** : Path to the template or document created during the task (in this case, the bulleted list document).
+  - **`prefill`** : Describes the `instantiated_request` and  `instantiated_plan` and the steps involved, such as selecting text and clicking buttons, which is the result of prefill flow. The `Success` and `MatchedControlText` is added in the execution process. **`Success`** indicates whether the subtask was executed successfully. **`MatchedControlText`** refers to the control text that was matched during the execution process based on the plan.
+  - **`instantiation_evaluation`** : Provides feedback on the task's feasibility and the evaluation of the request, which is result of the filter flow. **`"judge": true`** : This indicates that the evaluation of the task was positive, meaning the task is considered valid or successfully judged. And the `thought` is the detailed reason.
+- **`time_cost`** : The time spent on different parts of the task, including template selection, prefill, instantiation evaluation, and execution. Total time is also given.
 
 This structure follows your description and provides the necessary details in a consistent format.
 
@@ -510,7 +510,7 @@ This structure follows your description and provides the necessary details in a 
 The corresponding logs can be found in the directories `logs/bulleted` and `logs/rotate`, as shown below. Detailed logs for each workflow are recorded, capturing every step of the execution process.
 
 <h1 align="center">
-    <img src="../assets/dataflow/result_example.png"/> 
+    <img src="../assets/dataflow/result_example.png"/>
 </h1>
 
 ## Notes
