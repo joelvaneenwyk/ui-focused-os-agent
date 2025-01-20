@@ -43,6 +43,7 @@ tasks_status.json
 /*.egg-info/
 
 .venv/
+.ruff_cache/
 dist/
 
 /.python-version
