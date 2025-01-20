@@ -37,6 +37,9 @@ dataflow = "dataflow.__main__:main"
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.uv]
+package = true
+
 [tool.setuptools.packages.find]
 where = ["."]
 
@@ -47,6 +50,9 @@ ufo = ["*.yaml"]
 [dependency-groups]
 dev = [
     "isort>=5.13.2",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.5.50",
+    "mkdocstrings[python]>=0.27.0",
     "mypy>=1.14.1",
     "pylint>=3.3.3",
     "pyright>=1.1.392.post0",
