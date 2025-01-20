@@ -38,7 +38,17 @@ requires = ["setuptools", "setuptools_scm", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.uv]
+managed = true
 package = true
+environments = [
+    "sys_platform == 'win32'",
+    "sys_platform == 'darwin'",
+    "sys_platform == 'linux'",
+]
+link-mode = "copy"
+
+[tool.uv.pip]
+universal = true
 
 [tool.setuptools.packages.find]
 where = ["."]
