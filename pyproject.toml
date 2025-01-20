@@ -1,7 +1,7 @@
 [project]
 name = "ufo"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.2.0"
+description = "UFO is a UI-focused multi-agent framework designed to fulfill user requests on Windows OS by seamlessly navigating and operating within individual or multiple applications."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -34,7 +34,7 @@ record-processor = "record_processor.__main__:main"
 dataflow = "dataflow.__main__:main"
 
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools", "setuptools_scm", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.uv]
