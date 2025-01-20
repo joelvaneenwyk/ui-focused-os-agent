@@ -1,4 +1,4 @@
-name: Deploy MkDocs site
+name: Deploy Site
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'documents/**'
+      - '.github/**'
 
 jobs:
   deploy:
