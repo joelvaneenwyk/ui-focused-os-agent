@@ -59,7 +59,7 @@ The overall processing of dataflow is as below. Given a task-plan data, the LLMw
 You should install the necessary packages in the UFO root folder:
 
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 ### 2. Configure the LLMs

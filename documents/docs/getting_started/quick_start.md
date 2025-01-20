@@ -8,20 +8,20 @@ UFO requires **Python >= 3.10** running on **Windows OS >= 10**. It can be insta
 # conda activate ufo
 
 # clone the repository
-git clone https://github.com/microsoft/UFO.git
-cd UFO
+git clone https://github.com/joelvaneenwyk/ui-focused-os-agent.git
+cd ui-focused-os-agent
 # install the requirements
-pip install -r requirements.txt
+uv sync
 # If you want to use the Qwen as your LLMs, uncomment the related libs.
 ```
 
 ### ⚙️ Step 2: Configure the LLMs
-Before running UFO, you need to provide your LLM configurations **individually for HostAgent and AppAgent**. You can create your own config file `ufo/config/config.yaml`, by copying the `ufo/config/config.yaml.template` and editing config for **APP_AGENT** and **ACTION_AGENT** as follows: 
+Before running UFO, you need to provide your LLM configurations **individually for HostAgent and AppAgent**. You can create your own config file `ufo/config/config.yaml`, by copying the `ufo/config/config.yaml.template` and editing config for **APP_AGENT** and **ACTION_AGENT** as follows:
 
 #### OpenAI
 ```bash
 VISUAL_MODE: True, # Whether to use the visual mode
-API_TYPE: "openai" , # The API type, "openai" for the OpenAI API.  
+API_TYPE: "openai" , # The API type, "openai" for the OpenAI API.
 API_BASE: "https://api.openai.com/v1/chat/completions", # The the OpenAI API endpoint.
 API_KEY: "sk-",  # The OpenAI API key, begin with sk-
 API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
@@ -32,7 +32,7 @@ API_MODEL: "gpt-4-vision-preview",  # The OpenAI model
 #### Azure OpenAI (AOAI)
 ```bash
 VISUAL_MODE: True, # Whether to use the visual mode
-API_TYPE: "aoai" , # The API type, "aoai" for the Azure OpenAI.  
+API_TYPE: "aoai" , # The API type, "aoai" for the Azure OpenAI.
 API_BASE: "YOUR_ENDPOINT", #  The AOAI API address. Format: https://{your-resource-name}.openai.azure.com
 API_KEY: "YOUR_KEY",  # The aoai API key
 API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
@@ -56,7 +56,7 @@ Optionally, you can set a backup language model (LLM) engine in the `BACKUP_AGEN
     UFO also supports other LLMs and advanced configurations, such as customize your own model, please check the [documents](../supported_models/overview.md) for more details. Because of the limitations of model input, a lite version of the prompt is provided to allow users to experience it, which is configured in `config_dev.yaml`.
 
 ### 📔 Step 3: Additional Setting for RAG (optional).
-If you want to enhance UFO's ability with external knowledge, you can optionally configure it with an external database for retrieval augmented generation (RAG) in the `ufo/config/config.yaml` file. 
+If you want to enhance UFO's ability with external knowledge, you can optionally configure it with an external database for retrieval augmented generation (RAG) in the `ufo/config/config.yaml` file.
 
 We provide the following options for RAG to enhance UFO's capabilities:
 
@@ -80,11 +80,11 @@ We provide the following options for RAG to enhance UFO's capabilities:
 python -m ufo --task <your_task_name>
 ```
 
-This will start the UFO process and you can interact with it through the command line interface. 
+This will start the UFO process and you can interact with it through the command line interface.
 If everything goes well, you will see the following message:
 
 ```bash
-Welcome to use UFO🛸, A UI-focused Agent for Windows OS Interaction. 
+Welcome to use UFO🛸, A UI-focused Agent for Windows OS Interaction.
  _   _  _____   ___
 | | | ||  ___| / _ \
 | | | || |_   | | | |
@@ -94,7 +94,7 @@ Please enter your request to be completed🛸:
 ```
 
 
-###  Step 5 🎥: Execution Logs 
+### Step 5 🎥: Execution Logs
 
 You can find the screenshots taken and request & response logs in the following folder:
 ```

@@ -100,10 +100,10 @@ UFO requires **Python >= 3.10** running on **Windows OS >= 10**. It can be insta
 # conda activate ufo
 
 # clone the repository
-git clone https://github.com/microsoft/UFO.git
-cd UFO
+git clone https://github.com/joelvaneenwyk/ui-focused-os-agent.git
+cd ui-focused-os-agent
 # install the requirements
-pip install -r requirements.txt
+uv sync
 # If you want to use the Qwen as your LLMs, uncomment the related libs.
 ```
 

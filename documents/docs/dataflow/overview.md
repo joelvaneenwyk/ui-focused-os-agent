@@ -25,7 +25,7 @@ The overall processing of dataflow is as below. Given a task-plan data, the LLMw
 You should install the necessary packages in the UFO root folder:
 
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 ### 2. Configure the LLMs
@@ -36,7 +36,7 @@ Before running dataflow, you need to provide your LLM configurations **individua
 
 ```bash
 VISUAL_MODE: True, # Whether to use the visual mode
-API_TYPE: "openai" , # The API type, "openai" for the OpenAI API.  
+API_TYPE: "openai" , # The API type, "openai" for the OpenAI API.
 API_BASE: "https://api.openai.com/v1/chat/completions", # The the OpenAI API endpoint.
 API_KEY: "sk-",  # The OpenAI API key, begin with sk-
 API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
@@ -47,7 +47,7 @@ API_MODEL: "gpt-4-vision-preview",  # The only OpenAI model
 
 ```bash
 VISUAL_MODE: True, # Whether to use the visual mode
-API_TYPE: "aoai" , # The API type, "aoai" for the Azure OpenAI.  
+API_TYPE: "aoai" , # The API type, "aoai" for the Azure OpenAI.
 API_BASE: "YOUR_ENDPOINT", #  The AOAI API address. Format: https://{your-resource-name}.openai.azure.com
 API_KEY: "YOUR_KEY",  # The aoai API key
 API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
@@ -88,7 +88,7 @@ The tasks that need to be instantiated should be organized in a folder of JSON f
 {
     // The app you want to use
     "app": "word",
-    // A unique ID to distinguish different tasks 
+    // A unique ID to distinguish different tasks
     "unique_id": "1",
     // The task and steps to be instantiated
     "task": "Type 'hello' and set the font type to Arial",
@@ -245,7 +245,7 @@ The specific results can be referenced in the [result](./result.md) in JSON form
 The corresponding logs can be found in the directories `logs/bulleted` and `logs/rotate`, as shown below. Detailed logs for each workflow are recorded, capturing every step of the execution process.
 
 <h1 align="center">
-    <img src="../../img/result_example.png"/> 
+    <img src="../../img/result_example.png"/>
 </h1>
 
 # Reference
