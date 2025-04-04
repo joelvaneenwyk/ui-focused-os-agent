@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - cmd: |
+          if ! uv venv --allow-existing; then
+            rm -rf .venv
+            uv venv
+          fi
+      - cmd: |
+          uv sync --locked
