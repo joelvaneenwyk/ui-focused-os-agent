@@ -40,15 +40,44 @@ build-backend = "setuptools.build_meta"
 [tool.uv]
 managed = true
 package = true
-environments = [
-    "sys_platform == 'win32'",
-    "sys_platform == 'darwin'",
-    "sys_platform == 'linux'",
-]
+prerelease = "allow"
+index-strategy = "unsafe-best-match"
 link-mode = "copy"
 
 [tool.uv.pip]
 universal = true
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-gpu", marker = "sys_platform != 'darwin'" },
+    { index = "pytorch-cpu", marker = "sys_platform == 'darwin'" },
+]
+torchaudio = [
+    { index = "pytorch-gpu", marker = "sys_platform != 'darwin'" },
+    { index = "pytorch-cpu", marker = "sys_platform == 'darwin'" },
+]
+torchvision = [
+    { index = "pytorch-gpu", marker = "sys_platform != 'darwin'" },
+    { index = "pytorch-cpu", marker = "sys_platform == 'darwin'" },
+]
+triton = [
+    { index = "pytorch-gpu", marker = "sys_platform == 'win32'" },
+    { index = "pytorch-cpu", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+]
+pyyaml = { git = "https://github.com/yaml/pyyaml.git" }
+tqdm = { git = "https://github.com/tqdm/tqdm.git" }
+
+[[tool.uv.index]]
+name = "pytorch-gpu"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+prerelease = "allow"
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+prerelease = "allow"
 
 [tool.setuptools.packages.find]
 where = ["."]
