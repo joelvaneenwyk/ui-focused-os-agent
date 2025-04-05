@@ -2,6 +2,9 @@
 
 version: '3'
 
+env:
+  CONTROL_BACKEND: uia
+
 tasks:
   default:
     cmds:
@@ -12,3 +15,9 @@ tasks:
           fi
       - cmd: |
           uv sync --locked
+      - cmd: |
+          xcopy /-I /Y \
+              "{{ joinPath .TASKFILE_DIR "ufo/config/config.yaml.template" }}" \
+              "{{ joinPath .TASKFILE_DIR "ufo/config/config.yaml" }}"
+      - cmd: |
+          uv run --no-sync ufo
