@@ -1,21 +1,20 @@
 HOST_AGENT: {
   VISUAL_MODE: True, # Whether to use the visual mode
 
-  API_TYPE: "openai" , # The API type, "openai" for the OpenAI API, "aoai" for the AOAI API, 'azure_ad' for the ad authority of the AOAI API.  
+  API_TYPE: "openai" , # The API type, "openai" for the OpenAI API, "aoai" for the AOAI API, 'azure_ad' for the ad authority of the AOAI API.
   API_BASE: "https://api.openai.com/v1/chat/completions", # The the OpenAI API endpoint, "https://api.openai.com/v1/chat/completions" for the OpenAI API.
   API_KEY: "sk-",  # The OpenAI API key, begin with sk-
   API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
   API_MODEL: "gpt-4-vision-preview",  # The only OpenAI model by now that accepts visual input
 
-
   ### Comment above and uncomment these if using "aoai".
-  # API_TYPE: "aoai" , # The API type, "openai" for the OpenAI API, "aoai" for the Azure OpenAI.  
+  # API_TYPE: "aoai" , # The API type, "openai" for the OpenAI API, "aoai" for the Azure OpenAI.
   # API_BASE: "YOUR_ENDPOINT", # The the OpenAI API endpoint, "https://api.openai.com/v1/chat/completions" for the OpenAI API. As for the aoai, it should be https://{your-resource-name}.openai.azure.com
   # API_KEY: "YOUR_KEY",  # The aoai API key
   # API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
   # API_MODEL: "YOUR_MODEL",  # The only OpenAI model by now that accepts visual input
   # API_DEPLOYMENT_ID: "gpt-4-visual-preview", # The deployment id for the AOAI API
-  
+
   ### For Azure_AD
   # AAD_TENANT_ID: "YOUR_TENANT_ID", # Set the value to your tenant id for the llm model
   # AAD_API_SCOPE: "YOUR_SCOPE", # Set the value to your scope for the llm model
@@ -25,21 +24,20 @@ HOST_AGENT: {
 APP_AGENT: {
   VISUAL_MODE: True, # Whether to use the visual mode
 
-  API_TYPE: "openai" , # The API type, "openai" for the OpenAI API, "aoai" for the AOAI API, 'azure_ad' for the ad authority of the AOAI API.  
+  API_TYPE: "openai" , # The API type, "openai" for the OpenAI API, "aoai" for the AOAI API, 'azure_ad' for the ad authority of the AOAI API.
   API_BASE: "https://api.openai.com/v1/chat/completions", # The the OpenAI API endpoint, "https://api.openai.com/v1/chat/completions" for the OpenAI API.
   API_KEY: "sk-",  # The OpenAI API key, begin with sk-
   API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
   API_MODEL: "gpt-4-vision-preview",  # The only OpenAI model by now that accepts visual input
 
-
   ### Comment above and uncomment these if using "aoai".
-  # API_TYPE: "aoai" , # The API type, "openai" for the OpenAI API, "aoai" for the Azure OpenAI.  
+  # API_TYPE: "aoai" , # The API type, "openai" for the OpenAI API, "aoai" for the Azure OpenAI.
   # API_BASE: "YOUR_ENDPOINT", # The the OpenAI API endpoint, "https://api.openai.com/v1/chat/completions" for the OpenAI API. As for the aoai, it should be https://{your-resource-name}.openai.azure.com
   # API_KEY: "YOUR_KEY",  # The aoai API key
   # API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
   # API_MODEL: "YOUR_MODEL",  # The only OpenAI model by now that accepts visual input
   # API_DEPLOYMENT_ID: "gpt-4-visual-preview", # The deployment id for the AOAI API
-  
+
   ### For Azure_AD
   # AAD_TENANT_ID: "YOUR_TENANT_ID", # Set the value to your tenant id for the llm model
   # AAD_API_SCOPE: "YOUR_SCOPE", # Set the value to your scope for the llm model
@@ -49,7 +47,7 @@ APP_AGENT: {
 BACKUP_AGENT: {
   VISUAL_MODE: True, # Whether to use the visual mode
 
-  API_TYPE: "openai" , # The API type, "openai" for the OpenAI API, "aoai" for the AOAI API, 'azure_ad' for the ad authority of the AOAI API.  
+  API_TYPE: "openai" , # The API type, "openai" for the OpenAI API, "aoai" for the AOAI API, 'azure_ad' for the ad authority of the AOAI API.
   API_BASE: "https://api.openai.com/v1/chat/completions", # The the OpenAI API endpoint, "https://api.openai.com/v1/chat/completions" for the OpenAI API.
   API_KEY: "sk-",  # The OpenAI API key, begin with sk-
   API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
@@ -57,13 +55,13 @@ BACKUP_AGENT: {
 
 
   ### Comment above and uncomment these if using "aoai".
-  # API_TYPE: "aoai" , # The API type, "openai" for the OpenAI API, "aoai" for the Azure OpenAI.  
+  # API_TYPE: "aoai" , # The API type, "openai" for the OpenAI API, "aoai" for the Azure OpenAI.
   # API_BASE: "YOUR_ENDPOINT", # The the OpenAI API endpoint, "https://api.openai.com/v1/chat/completions" for the OpenAI API. As for the aoai, it should be https://{your-resource-name}.openai.azure.com
   # API_KEY: "YOUR_KEY",  # The aoai API key
   # API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
   # API_MODEL: "YOUR_MODEL",  # The only OpenAI model by now that accepts visual input
   # API_DEPLOYMENT_ID: "gpt-4-visual-preview", # The deployment id for the AOAI API
-  
+
   ### For Azure_AD
   # AAD_TENANT_ID: "YOUR_TENANT_ID", # Set the value to your tenant id for the llm model
   # AAD_API_SCOPE: "YOUR_SCOPE", # Set the value to your scope for the llm model
@@ -99,4 +97,3 @@ RAG_EXPERIENCE_RETRIEVED_TOPK: 5  # The topk for the offline retrieved documents
 RAG_DEMONSTRATION: False  # Whether to use the RAG from its user demonstration.
 RAG_DEMONSTRATION_RETRIEVED_TOPK: 5  # The topk for the offline retrieved documents
 RAG_DEMONSTRATION_COMPLETION_N: 3  # The number of completion choices for the demonstration result
-
